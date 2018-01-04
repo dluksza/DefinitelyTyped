@@ -29,6 +29,7 @@ export type MeasureOnSuccessCallback = (
     x: number,
     y: number,
     width: number,
+    
     height: number,
     pageX: number,
     pageY: number
@@ -746,7 +747,7 @@ export interface TextStyleAndroid extends ViewStyle {
 
 // @see https://facebook.github.io/react-native/docs/text.html#style
 export interface TextStyle extends TextStyleIOS, TextStyleAndroid, ViewStyle {
-    color?: string;
+    color?: string | Animated.AnimatedInterpolation;
     fontFamily?: string;
     fontSize?: number;
     fontStyle?: "normal" | "italic";
@@ -1549,7 +1550,7 @@ export interface ViewStyle extends FlexStyle, TransformsStyle {
     borderTopRightRadius?: number;
     borderTopWidth?: number;
     display?: "none" | "flex";
-    opacity?: number;
+    opacity?: number | Animated.AnimatedInterpolation;
     overflow?: "visible" | "hidden";
     shadowColor?: string;
     shadowOffset?: { width: number; height: number };
